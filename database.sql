@@ -16,6 +16,39 @@ CREATE TABLE "genres" (
 -- You will need to create the junction table that stores the relationships between "movies" and "genres"
 -- This table will need to be populated with some data as well (INSERTS)
 -- Recall that this Junction Table will just be a table of ids!
+create table "movies_genres" (
+  movies_genres_id SERIAL PRIMARY KEY,  
+  movie_id INT NOT NULL REFERENCES "movies",
+  genre_id INT NOT NULL REFERENCES "genres"
+);
+
+-- Insertions based on data from "movies"
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (1, 7); -- avatr
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (1, 11);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (2, 8);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (2, 9);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (2, 10); -- b & b
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (3, 13); --captian marvel
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (4, 2);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (4, 1); -- finding nemo
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (5, 1); -- gone girl
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (6, 8); -- harry potter
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (7, 1); -- james bond
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (8, 6); -- life of pi
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (9, 2); -- monsters inc
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (9, 4);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (10, 7); -- star wars
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (10, 12);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (11, 11); -- the martian
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (12, 3); -- the social network
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (12, 6);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (13, 7); -- titanic
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (13, 5);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (13, 10);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (14, 1);
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (14, 2); -- toy story
+INSERT INTO "movies_genres" (movie_id, genre_id) VALUES (14, 4);
+
 
 
 
