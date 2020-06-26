@@ -1,8 +1,8 @@
 ## Initial Setup (base)
-* Install dependencies
-* Create database:
-  - Name: saga_movies_weekend
-  - Create the JOIN table
+* Install dependencies -- DONE
+* Create database: -- DONE
+  - Name: saga_movies_weekend -- DONE
+  - Create the JOIN table -- DONE
 
 ## Components
 
@@ -31,22 +31,6 @@
 * PUT /movies UPDATE title, description FROM movies WHERE id=$1
 --> create router for organization /movies
 * Test in postman
-
-create table 'movies_genres' (
-  movies_genre_id SERIAL PRIMARY KEY,  
-  move_id INT NOT NULL REFERENCES "movies",
-  genre_id INT NOT NULL REFERENCES "genres"
-);
-
-SELECT title, name as genre_name FROM movies
-JOIN movies_genres ON movies_genres.movie_id = movies.id
-JOIN genres ON movies_genres.genre_id = genre.id;
-
-
-SELECT movies.title, array_ag(name) as genres FROM movies
-JOIN movies_genres ON movies_genres.movie_id = movies.id
-JOIN genres ON movies_genres.genre_id = genres.id
-GROUP BY movies.title;
 
 
 
