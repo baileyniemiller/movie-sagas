@@ -88,3 +88,9 @@ VALUES
 ('Science Fiction'),
 ('Space-Opera'),
 ('Superhero');
+
+-- SELECT movies.title, movies.poster, array_agg(name) AS genres FROM movies
+-- WHERE movies.id=1
+-- JOIN movies_genres ON movies_genres.movie_id = movies.id
+-- JOIN genres ON movies_genres.genre_id = genres.id
+-- GROUP BY movies.title, movies.poster;
