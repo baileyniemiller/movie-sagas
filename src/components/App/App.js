@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './App.css';
 import Movies from '../Movies/Movies.js';
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 
 class App extends Component {
 
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="App">
-        <h1>Movies</h1>
-        <Movies />
-      </div>
+      <Router>
+        <div className="App">
+          <Route path="/">
+            <Movies />
+          </Route>
+        </div>
+      </Router>
     );
   }
 }
