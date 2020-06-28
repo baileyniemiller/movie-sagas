@@ -23,9 +23,15 @@ class Edit extends Component {
      for (let i = 0; i < this.props.details.length; i++) {
          const element = this.props.details[i];
         let value = element.id
+        let title = element.title
+        let description = element.description
         console.log(value);
         
-       return this.setState({id: value})
+       return this.setState({
+         title: title,
+         description: description,
+         id: value
+        })
      }
     }
     // when a use enters in a new title or description,
@@ -36,20 +42,24 @@ class Edit extends Component {
         })
     }
     
-    // on submit, dispatch to 
-    // handleSubmit = () => {
-    //     this.props.dispatch({}) // TODO: need to finish dispatch FETCH_DETAILS
-    // }
+    // on submit, dispatch to EDIT_MOVIE
+    handleSubmit = () => {
+      if (this.state.title !== '' && this.state.description !== '') {
+        this.props.dispatch({type:'EDIT_MOVIE', payload: this.state}) // TODO: need to finish dispatch FETCH_DETAILS
+      }else{
+        alert('please make sure input are not empty')
+      }
+    }
 
   render() {
     return (
       <div>
-          {JSON.stringify(this.state)}
-        <input type="text" className="titleInput" onChange={(event)=>this.handleChange("title",event)}/>
+        <input type="text" className="titleInput" value={this.state.title} onChange={(event)=>this.handleChange("title",event)}/>
         <label for="titleInput">Title</label>
-        <textarea className="descriptionInput" rows="4" cols="30" onChange={(event)=>this.handleChange("description",event)}></textarea>
+        <textarea className="descriptionInput" rows="20" cols="40" value={this.state.description} onChange={(event)=>this.handleChange("description",event)}></textarea>
         <label for="descriptionInput">Description</label>
-        {/* <button onClick={this.handleSubmit()}>Submit</button> */}
+        <button onClick={()=>this.handleSubmit()}>Save</button>
+        <Link to="/details"><button>Back to Details</button></Link>
       </div>
     )
   }

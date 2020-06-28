@@ -12,7 +12,7 @@ import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import { takeEvery, put } from "redux-saga/effects";
 
-function* editMovies(action) { // TODO: finish edit mov
+function* editMovies(action) {
   try{
     yield axios.put(`/edit`, action.payload)
     yield put({type:'FETCH_DETAILS'})
