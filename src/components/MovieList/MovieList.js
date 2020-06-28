@@ -39,6 +39,7 @@ class MovieList extends Component {
         {this.renderRedirect()}
         {/* Mapping through movies, which we recieved from the
             movies reducer as props, to grab each poster and dispay it*/}
+            <h1 className="homeTitle">Click on a movie to learn more!</h1>
           <div clasName="paperDiv">
             <Grid container spacing={6} className="grid">
               {this.props.movies.map((movie) => {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Route, Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import './Details.css';
+import swal from "sweetalert";
 
 // Details Component
 class Details extends Component {
