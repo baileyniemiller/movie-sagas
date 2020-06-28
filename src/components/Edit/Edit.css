@@ -1,0 +1,57 @@
+input {
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+.titleLabel, .descriptionLabel {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+textarea {
+  margin-top: 20px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.saveButton {
+  background-color: white;
+  color: #f5822a;
+  border: 1px solid #f5822a;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.backButton {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.saveButton:hover {
+  background-color: #f5822a;
+  color: white;
+}
+
+ .backButton:hover {
+  background-color: red;
+  color: white;
+ }
+
+ #editTitle {
+   border-bottom: 2px solid #f04d4d;
+   width: 30%;
+   margin-right: 35%;
+   margin-left: 35%;
+   margin-bottom: 40px;
+   font-family: 'Righteous', cursive;
+ }
