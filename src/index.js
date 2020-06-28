@@ -15,7 +15,8 @@ import { takeEvery, put } from "redux-saga/effects";
 function* editMovies(action) {
   try{
     yield axios.put(`/edit`, action.payload)
-    yield put({type:'FETCH_DETAILS'})
+    const response = yield axios.get(`/details/${action.payload.id}`);
+    yield put({ type: "SET_DETAILS", payload: response.data});
   }catch(error){
     console.log('error editing movie', error)
   }
