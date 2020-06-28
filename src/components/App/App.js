@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './App.css';
-import Movies from '../Movies/Movies.js';
+import MovieList from '../MovieList/MovieList.js';
+import MovieItem from '../MovieItem/MovieItem.js';
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import Details from '../Details/Details.js';
+import Header from '../Header/Header.js';
 
 class App extends Component {
 
@@ -10,9 +13,13 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <div className="App">
-          <Route path="/">
-            <Movies />
+          <Route exact path="/">
+            <MovieList />
+          </Route>
+          <Route path="/details">
+            <Details />
           </Route>
         </div>
       </Router>

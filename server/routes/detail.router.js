@@ -7,11 +7,11 @@ const router = express.Router();
 router.get("/:id", (req, res) => {
   const movieId = req.params.id;
   // setting query text to select the details only from the movie clicked
-  const queryText = `SELECT movies.title, movies.poster, array_agg(name) AS genres FROM movies
+  const queryText = `SELECT movies.title, movies.poster, movies.description, array_agg(name) AS genres FROM movies
                      JOIN movies_genres ON movies_genres.movie_id = movies.id
                      JOIN genres ON movies_genres.genre_id = genres.id
                      WHERE movies.id=$1
-                     GROUP BY movies.title, movies.poster;`;
+                     GROUP BY movies.title, movies.poster, movies.description;`;
   pool
     .query(queryText, [movieId])
     .then((result) => {
