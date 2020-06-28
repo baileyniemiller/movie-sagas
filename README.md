@@ -16,7 +16,7 @@ You will be taken to this details page when a movie is clicked.
 
 This is the edit page where you can edit the title and description, and save or cancel.
 
-![alt text](/public/images/home.pmg "Movie App Screenshot")
+![alt text](/public/images/home.png "Movie App Screenshot")
 
 
 ## Built With
