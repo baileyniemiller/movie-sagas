@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Link, withRouter, Redirect } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
+import GridList from "@material-ui/core/GridList";
+import Grid from "@material-ui/core/Grid";
+import GridListTile from "@material-ui/core/GridListTile";
+import './MovieList.css';
 
 
 class MovieList extends Component {
@@ -34,11 +39,19 @@ class MovieList extends Component {
         {this.renderRedirect()}
         {/* Mapping through movies, which we recieved from the
             movies reducer as props, to grab each poster and dispay it*/}
-        {this.props.movies.map((movie) => {
-          return (
-           <img src={movie.poster} onClick={() => this.getDetails(movie.id) }/>
-          );
-        })}
+          <div clasName="paperDiv">
+            <Grid container spacing={6} className="grid">
+              {this.props.movies.map((movie) => {
+                return (
+                  <Grid item lg={3} sm={6} xs={12}>
+                    <Paper elevation={2} className="paperElement">
+                      <img className="moviePoster"src={movie.poster} onClick={() => this.getDetails(movie.id) }/>
+                    </Paper>
+                </Grid>
+                );
+              })}
+            </Grid>
+          </div>
       </div>
     );
   }
