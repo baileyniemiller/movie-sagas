@@ -2,39 +2,34 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import './Details.css';
 
+// Details Component
 class Details extends Component {
-  componentDidMount(){
-    console.log(this.props.details);
-  }
-  
+
   render() {
     return (
       // setting the route to /details
       <Route path="/details">
-        {/* {JSON.stringify(this.props.details.title)} */}
-        {/* <h1>{this.props.details}</h1> */}
         <div>
-
+          {/* Mapping through details in order to display each item. */}
           {this.props.details.map((x) => {
           return (
-           <div>
-              <h1>{x.title}</h1>
-              <img src={x.poster}/>
-              <p>{x.description}</p>
-              <Link to="edit"><button>Edit</button></Link>
-              <ul>
-
-              {x.genres.map((genre) => {
-                return (
-                <li>
-                  {genre}
-                </li>
-                )
-              })}
-              </ul>
+            <div>
+              <h1 className="movTitle">{x.title}</h1>
+              <img src={x.poster} className="movImg" />
+              <p>Genre:</p>
+                {/* Mapping through the genres because there might be more than
+                    in the array that comes in from the reducer. */}
+                {x.genres.map((genre) => {
+                  return <p className="genreItem">{genre}</p>;
+                })}
+              <p className="movDescription">{x.description}</p>
+              <Link to="edit">
+                <button className="editButton">Edit</button>
+              </Link>
             </div>
-          )
+          );
           })}
         </div>
       </Route>
@@ -51,8 +46,4 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(withRouter(Details));
-
-/* Mapping through genres because there can be multiple genres that come through as an array*/
-                              
-/* Mapping through the movie deatils to display each item */
                               

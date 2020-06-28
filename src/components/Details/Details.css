@@ -1,0 +1,32 @@
+.movTitle {
+  font-size: 35px;
+  font-family: 'Righteous', cursive;
+}
+
+.movDescription {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 50px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.genreItem {
+  font-style: italic;
+  margin: 0;
+}
+
+.editButton {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.editButton:hover {
+  background-color: red;
+  color: white;
+}
