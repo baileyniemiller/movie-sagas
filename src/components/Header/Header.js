@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Route, Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+// Header component
 
 class Header extends Component {
   render() {

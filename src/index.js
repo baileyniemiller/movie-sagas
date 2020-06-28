@@ -12,6 +12,15 @@ import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import { takeEvery, put } from "redux-saga/effects";
 
+function* editMovies(action) { // TODO: finish edit mov
+  try{
+    yield axios.put(`/edit`, action.payload)
+    yield put({type:'FETCH_DETAILS'})
+  }catch(error){
+    console.log('error editing movie', error)
+  }
+}
+
 // GET on /movies
 function* fetchMovies(action) {
   // wrap it all in try/catch
@@ -44,6 +53,7 @@ function* rootSaga() {
     yield takeEvery("FETCH_MOVIES", fetchMovies);
     // FETCH_DETAILS
     yield takeEvery("FETCH_DETAILS", fetchDetails);
+    yield takeEvery("EDIT_MOVIE", editMovies);
 }
 
 // Create sagaMiddleware
@@ -59,6 +69,7 @@ const movies = (state = [], action) => {
     }
 }
 
+// Used to store the details of the movie that is clicked
 const details = (state = [], action) => {
   switch (action.type) {
     case "SET_DETAILS":
