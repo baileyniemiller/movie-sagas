@@ -19,14 +19,17 @@ class Details extends Component {
               <h1 className="movTitle">{x.title}</h1>
               <img src={x.poster} className="movImg" />
               <p>Genre:</p>
-                {/* Mapping through the genres because there might be more than
+              {/* Mapping through the genres because there might be more than
                     in the array that comes in from the reducer. */}
-                {x.genres.map((genre) => {
-                  return <p className="genreItem">{genre}</p>;
-                })}
+              {x.genres.map((genre) => {
+                return <p className="genreItem">{genre}</p>;
+              })}
               <p className="movDescription">{x.description}</p>
-              <Link to="edit">
+              <Link to="/edit">
                 <button className="editButton">Edit</button>
+              </Link>
+              <Link exact to="/">
+                <button className="homeButton">Home</button>
               </Link>
             </div>
           );
