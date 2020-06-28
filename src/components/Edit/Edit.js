@@ -49,6 +49,7 @@ class Edit extends Component {
     
     // on submit, dispatch to EDIT_MOVIE
     handleSubmit = () => {
+      // an alert will pop up for the user to confirm changes or cancel
       swal({
         title: "Are you sure you'd like to save your changes?",
         buttons: true,
@@ -58,14 +59,6 @@ class Edit extends Component {
            this.props.dispatch({type:'EDIT_MOVIE', payload: this.state})
         }
       })
-      // if the title and/or description is empty, send an alert.  
-      // The inputs must not be left empty.  Otherwise, go ahead
-      // and dispatch with the payload of the state.
-      // if (this.state.title !== '' && this.state.description !== '') {
-      //   this.props.dispatch({type:'EDIT_MOVIE', payload: this.state}) // TODO: need to finish dispatch FETCH_DETAILS
-      // }else{
-      //   alert('please make sure input are not empty')
-      // }
     }
 
   render() {
