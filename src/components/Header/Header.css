@@ -1,5 +1,7 @@
 .title {
-  font-size: 50px;
+  font-size: 45px;
+  font-family: 'Righteous', cursive;
+  margin-left: 100px;
 }
 
 .homeButton {
@@ -7,5 +9,26 @@
   color: red;
   border: 1px solid red;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.homeButton:hover {
+  background-color: red;
+  color: white;
+}
+
+.button {
+  text-align: right;
+  margin-right: 100px;
+}
+
+header {
+  background-color: white;
+  box-shadow: 5px 3px 10px black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 50px;
 }

@@ -9,9 +9,13 @@ class Header extends Component {
     return (
       <header>
         <h1 className="title">InfoMovie</h1>
-        <Link exact to="/"><button className="homeButton">Home</button></Link>
+        <div className="button">
+          <Link exact to="/">
+            <button className="homeButton">Home</button>
+          </Link>
+        </div>
       </header>
-    )
+    );
   }
 }
 

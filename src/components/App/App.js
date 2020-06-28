@@ -6,6 +6,7 @@ import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import Details from '../Details/Details.js';
 import Header from '../Header/Header.js';
 import Edit from '../Edit/Edit.js';
+import Footer from '../Footer/Footer.js';
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/edit">
             <Edit />
           </Route>
+          <Footer />
         </div>
       </Router>
     );
